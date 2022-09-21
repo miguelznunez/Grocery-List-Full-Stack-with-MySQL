@@ -1,4 +1,4 @@
-In order to get this application to run, you will need to follow the steps below.
+In order to get this application to run, you will need to follow these steps.
 
 1. Download the zip file or clone the repository.
 2. Create a .env file and paste the following code inside:
