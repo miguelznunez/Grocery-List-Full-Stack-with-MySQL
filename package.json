@@ -2,10 +2,10 @@
   "name": "grocery-list-full-stack",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "server": "nodemon app.js"
+    "start": "nodemon server.js",
+    "server": "nodemon server.js"
   },
   "author": "Miguel Nunez",
   "license": "ISC",
