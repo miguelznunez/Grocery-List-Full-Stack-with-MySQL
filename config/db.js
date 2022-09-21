@@ -4,8 +4,8 @@ const connectDB  = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
   user: "root",
-  password: "<ENTER YOUR PASSWORD HERE>",
-  database: "grocery_list"
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 module.exports = connectDB;
