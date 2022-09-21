@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "mumblers_demoregular";
+  color: #262626;
+  background: linear-gradient(217deg, rgba(216, 127, 110, 0.9), rgba(216, 127, 110, 0) 70.71%),
+  linear-gradient(127deg, rgba(189, 216, 181, 0.9), rgba(189, 216, 181, 0) 70.71%),
+  linear-gradient(320deg, rgba(52, 72, 93, 0.9), rgba(52, 72, 93, 0) 70.71%);
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+}
+
+.notebook {
+  width: 600px;
+  min-height: 100vh;
+  padding-top: 20px;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 10px 10px 24px 0px rgba(0, 0, 0, 0.50);
+}
+
+.title {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.input-container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.input-container i {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: 0.2s ease;
+  color: lightgray;
+}
+
+.input-container i:hover {
+  color: red;
+}
+
+.input-container input {
+  font-family: inherit;
+  outline: 0;
+  border: 0;
+  width: 65%;
+  font-size: 1.5rem;
+  border-bottom: 3px solid lightgray;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 85%;
+  font-size: 1.5rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.options i {
+  font-size: 1rem;
+  transition: 0.2s ease;
+  color: lightgray;
+  cursor: pointer;
+}
+
+.options .fa-pen-to-square:hover {
+  color: orange;
+}
+
+.options .fa-circle-xmark:hover {
+  color: red;
+}
+
+.options .fa-circle-check:hover {
+  color: lime;
+}
+
+.options .green {
+  color: lime;
+}
+
+@media(max-width:768px) {
+  .list {
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width:480px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .input-container i {
+    font-size: 2rem;
+  }
+
+  .input-container input {
+    font-size: 1rem;
+  }
+
+  .list {
+    font-size: 0.9rem;
+  }
+}

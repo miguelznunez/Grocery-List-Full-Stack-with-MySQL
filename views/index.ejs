@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Grocery List</title>
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <div class="notebook">
+        <div class="title">
+          <h1>Grocery List</h1>
+        </div>
+        <div class="input-container">
+          <i class="fa-solid fa-trash-can" id="delete-list"></i>
+          <input type="text" id="userInput">
+        </div>
+        <div class="list">
+          <% for (let i = 0; i < rows.length; i++) { %>
+            <div class="item" id="<%= rows[i].id %>">
+              <div class="options">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <% if (rows[i].cart) { %>
+                  <i class="fa-regular fa-circle-check green"></i>
+                <% } else { %>
+                  <i class="fa-regular fa-circle-check"></i>
+                <% } %>
+              </div>
+              <h2><%= rows[i].item %></h2>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const userInput = document.querySelector("#userInput")
+    const delList = document.querySelector("#delete-list")
+    const checks = document.querySelectorAll(".fa-circle-check")
+    const xmarks = document.querySelectorAll(".fa-circle-xmark")
+    const rows = JSON.parse('<%-JSON.stringify(rows)%>')
+
+    userInput.select();
+
+    // add a new grocery item to the list
+    userInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter")
+        addItem(userInput.value)
+    });
+
+    // grocery item has been added to the cart
+    checks.forEach((check, i) => {
+      check.addEventListener("click", () => {
+        if(rows[i].cart) {
+          updateItem(rows[i].id, false)
+        } else {
+          updateItem(rows[i].id, true)
+        }
+      })
+    })
+
+    // delete this grocery item from the list
+    xmarks.forEach((mark, i) => {
+      mark.addEventListener("click", () => {
+        deleteItem(rows[i].id)
+      })
+    })
+
+    // delete the entire list
+    delList.addEventListener("click", () => {
+      deleteList()
+    })
+
+    async function addItem(item) {
+      let url = `/addItem?item=${item}`;
+      await fetch(url);
+      location.reload();
+    }
+
+    async function updateItem(id, action) {
+      let url = `/updateItem?id=${id}&action=${action}`;
+      await fetch(url);
+      location.reload();
+    }
+
+    async function deleteItem(id) {
+      let url = `/deleteItem?id=${id}`;
+      await fetch(url);
+      location.reload();
+    }
+
+    async function deleteList() {
+      let url = `/deleteList`;
+      await fetch(url);
+      location.reload();
+    }
+
+  </script>
+  
+</body>
+</html>

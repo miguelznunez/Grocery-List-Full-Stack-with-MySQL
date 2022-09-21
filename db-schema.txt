@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS list(
+id	   INT		        AUTO_INCREMENT,
+item    VARCHAR(255)	NOT NULL,
+cart    BOOLEAN       DEFAULT(false),
+PRIMARY KEY (id) );
