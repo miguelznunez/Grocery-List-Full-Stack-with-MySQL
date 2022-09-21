@@ -5,7 +5,7 @@ In order to get this application to run, you will need to follow these steps.
 3. Create a .env file and paste the following code inside:
 NODE_ENV = development
 PORT = 5000
-DB_PASSWORD = <YOUR MYSQL PASSWORD>
+DB_PASSWORD = *YOUR MYSQL PASSWORD*
 DB_NAME = grocery_list
 4. Run "npm install" on your VS code console to install all of the dependencies.  
 5. Run "npm run server" on your console and enjoy!
