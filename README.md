@@ -1,6 +1,6 @@
 In order to get this application to run, you will need to follow these steps.
 
-1. Download the zip file or clone the repository.
+1. Download the zip folder or clone the repository.
 2. Create a MySQL database called grocery_list, then copy, paste, and run the schema I created in the db-schema.txt file.
 3. Create a .env file in the root directory and paste the following code inside:
 NODE_ENV = development
